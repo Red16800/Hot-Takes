@@ -11,8 +11,8 @@ exports.signup = (req, res, next) => {
             password: hash
         });
         user.save()
-            .then(() => res.status(400).json({ message: 'Utilisateur créé ! '}))
-            .catch(error => res.status(401).json({ error }));
+            .then(() => res.status(201).json({ message: 'Utilisateur créé ! '}))
+            .catch(error => res.status(400).json({ error }));
     })
     .catch(error => res.status(500).json({ error }));
 };
